@@ -21,9 +21,9 @@ validate_flutter() {
 
 validate() {
   if "${INPUT_FLUTTER_PACKAGE}"; then
-    test_flutter
+    validate_flutter
   else
-    test_dart
+    validate_dart
   fi
   dartanalyzer lib
   dartfmt --set-exit-if-changed -w lib test
