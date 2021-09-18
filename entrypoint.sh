@@ -26,7 +26,7 @@ validate() {
     validate_dart
   fi
   dartanalyzer lib
-  dartfmt --set-exit-if-changed -w lib test
+  dart format --set-exit-if-changed lib test
 }
 
 switch_working_directory
