@@ -2,17 +2,39 @@
 name: "Validate Dart/Flutter package"
 description: "Validate Dart/Flutter package"
 inputs:
+  channel:
+    description: "(Optional) Flutter / Dart channel to use (default: stable"
+    required: false
+    default: "stable"
   flutter_package:
     description: "(Optional) Code packages type.  Set to false if this is a pure dart package. (default: true)"
     required: false
-    default: true
+    default: "true"
   package_directory:
     description: '(Optional) Package directory (default: ".")'
     required: false
     default: "."
+
 runs:
-  using: "docker"
-  image: "Dockerfile"
-branding:
-  icon: "arrow-up-circle"
-  color: "blue"
+  using: "composite"
+  steps:
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v1
+      with:
+        channel: ${{ inputs.channel }}
+
+    - name: Validate
+      shell: bash
+      id: validate
+      run: |
+        dart format --set-exit-if-changed lib test
+
+        if "${{ inputs.flutter_package }}"; then
+          flutter packages get
+          flutter analyze
+          flutter test
+        else
+          pub get
+          dart analyze
+          dart test
+        fi
