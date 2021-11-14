@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Validate
-        uses: peiffer-innovations/actions-flutter-validate@v1.1.0
+        uses: peiffer-innovations/actions-flutter-validate@v1.1.1
         with:
           flutter_package: false
 ```
