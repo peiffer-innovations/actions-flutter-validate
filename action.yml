@@ -1,11 +1,15 @@
 # action.yml
-name: "Publish Dart/Flutter package"
-description: "Publish Dart/Flutter package"
+name: "Validate Dart/Flutter package"
+description: "Validate Dart/Flutter package"
 inputs:
   channel:
     description: "(Optional) Flutter / Dart channel to use (default: stable"
     required: false
     default: "stable"
+  flutter_package:
+    description: '(Optional) Define if this is a Flutter (true) or Dart (false) package (default: "true")'
+    required: false
+    default: "true"
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
@@ -19,13 +23,10 @@ runs:
       with:
         channel: ${{ inputs.channel }}
 
-    - name: Publish
+    - name: Validate
       shell: bash
-      id: publish
+      id: validate
       run: |
-        cat <<EOF > $PUB_CACHE/credentials.json
-          ${{ input.credentials }}
-          EOF        
         dart format --set-exit-if-changed lib test
 
         if "${{ inputs.flutter_package }}"; then
