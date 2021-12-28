@@ -34,7 +34,7 @@ runs:
           flutter analyze
           flutter test
         else
-          pub get
+          dart pub get
           dart analyze
           dart test
         fi
