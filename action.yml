@@ -1,22 +1,22 @@
 # action.yml
-name: "Validate Dart/Flutter package"
-description: "Validate Dart/Flutter package"
+name: 'Validate Dart/Flutter package'
+description: 'Validate Dart/Flutter package'
 inputs:
   channel:
-    description: "(Optional) Flutter / Dart channel to use (default: stable"
+    description: '(Optional) Flutter / Dart channel to use (default: stable'
     required: false
-    default: "stable"
+    default: 'stable'
   flutter_package:
     description: '(Optional) Define if this is a Flutter (true) or Dart (false) package (default: "true")'
     required: false
-    default: "true"
+    default: 'true'
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
-    default: "."
+    default: '.'
 
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
@@ -35,7 +35,7 @@ runs:
           flutter test
         else
           dart pub get
-          dart analyze
+          dart analyze lib
           dart test
         fi
       working-directory: ${{ inputs.path }}
