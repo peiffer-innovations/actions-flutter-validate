@@ -5,6 +5,7 @@
 **Table of Contents**
 
 - [Inputs](#inputs)
+- [Example usage](#example-usage)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
