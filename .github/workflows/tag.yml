@@ -23,4 +23,4 @@ jobs:
           set -e
 
           dart pub global activate -sgit https://github.com/peiffer-innovations/actions-dart-version-autotag
-          dart pub global run dart_version_autotag:tag --token ${{ secrets.GITHUB_TOKEN }} --repository "peiffer-innovations/actions-dart-version-autotag"
+          dart pub global run dart_version_autotag:tag --token ${{ secrets.GITHUB_TOKEN }} --repository "${{ env.GITHUB_REPOSITORY }}"
