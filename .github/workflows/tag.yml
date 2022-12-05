@@ -14,13 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Dart
-        uses: dart-lang/setup-dart@v1
-
-      - name: Update dependencies
-        shell: bash
-        run: |
-          set -e
-
-          dart pub global activate -sgit https://github.com/peiffer-innovations/actions-dart-version-autotag
-          dart pub global run dart_version_autotag:tag --token ${{ secrets.GITHUB_TOKEN }} --repository "${{ env.GITHUB_REPOSITORY }}"
+      - uses: peiffer-innovations/actions-dart-version-autotag@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
