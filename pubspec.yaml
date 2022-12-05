@@ -1,0 +1,7 @@
+name: 'actions_flutter_validate'
+description: 'Metadata to provide a version number to the autotagging script'
+version: '1.2.0'
+homepage: 'https://github.com/peiffer-innovations/actions-flutter-validate'
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'

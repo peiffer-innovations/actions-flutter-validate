@@ -6,10 +6,6 @@ inputs:
     description: '(Optional) Flutter / Dart channel to use (default: stable'
     required: false
     default: 'stable'
-  flutter_package:
-    description: '(Optional) Define if this is a Flutter (true) or Dart (false) package (default: "true")'
-    required: false
-    default: 'true'
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
@@ -29,7 +25,7 @@ runs:
       run: |
         dart format --set-exit-if-changed lib test
 
-        if "${{ inputs.flutter_package }}"; then
+        if grep -q flutter: "pubspec.yaml"; then 
           flutter packages get
           flutter analyze
           flutter test
