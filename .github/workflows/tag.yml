@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: peiffer-innovations/actions-dart-version-autotag@v1
+      - uses: peiffer-innovations/actions-dart-version-autotag@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
