@@ -16,6 +16,7 @@ Performs checks against Dart and Flutter code to ensure the package does not hav
 Name              | Default  | Description
 ------------------|----------|-------------
 `channel`         | `stable` | Channel to pull for Dart / Flutter's SDK
+`flutter_version` | `any`    | Flutter version within the channel to use
 `path`            | `.`      | Path for the package being validated
 
 

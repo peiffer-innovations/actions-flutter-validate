@@ -6,6 +6,10 @@ inputs:
     description: '(Optional) Flutter / Dart channel to use (default: stable'
     required: false
     default: 'stable'
+  flutter_version:
+    description: '(Optional) Flutter version to use'
+    default: 'any'
+    required: false
   path:
     description: '(Optional) Package directory (default: ".")'
     required: false
@@ -18,6 +22,7 @@ runs:
       uses: subosito/flutter-action@v2
       with:
         channel: ${{ inputs.channel }}
+        flutter-version: ${{ inputs.flutter_version }}
 
     - name: Validate
       shell: bash
