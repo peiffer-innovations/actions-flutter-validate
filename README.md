@@ -17,6 +17,7 @@ Name              | Default  | Description
 ------------------|----------|-------------
 `channel`         | `stable` | Channel to pull for Dart / Flutter's SDK
 `flutter_version` | `any`    | Flutter version within the channel to use
+`generate_code`   | `false`  | State whether or not to run the code generator before validating
 `path`            | `.`      | Path for the package being validated
 
 
