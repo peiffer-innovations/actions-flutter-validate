@@ -47,7 +47,7 @@ runs:
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
           fi
-          dart analyze lib
+          dart analyze
           dart test
         fi
       working-directory: ${{ inputs.path }}
