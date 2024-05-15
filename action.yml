@@ -55,5 +55,6 @@ runs:
     - name: Security Scan
       # Docs: https://google.github.io/osv-scanner/github-action/
       # Releases: https://github.com/google/osv-scanner-action/tags
-      uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v1.7.3"
+      uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v1.6.2-beta1"
+      # uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable.yml@v1.7.3"
 
