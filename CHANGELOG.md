@@ -1,3 +1,8 @@
+## [2.0.3] - May 16th, 2024
+
+* Explicitly defined pubspec.lock file
+
+
 ## [2.0.2] - May 16th, 2024
 
 * Switching from reusable action to discrete steps.
