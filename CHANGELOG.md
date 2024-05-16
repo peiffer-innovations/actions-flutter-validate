@@ -1,3 +1,8 @@
+## [2.0.5] - May 16th, 2024
+
+* Fixed typo
+
+
 ## [2.0.4] - May 16th, 2024
 
 * Added input for serif file name.
