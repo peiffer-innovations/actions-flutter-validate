@@ -1,3 +1,8 @@
+## [2.0.4] - May 16th, 2024
+
+* Added input for serif file name.
+
+
 ## [2.0.3] - May 16th, 2024
 
 * Explicitly defined pubspec.lock file
