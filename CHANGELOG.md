@@ -1,6 +1,11 @@
+## [2.0.8] - May 27th, 2024
+
+* Fixed references to `sarif_category`.
+
+
 ## [2.0.7] - May 27th, 2024
 
-* Added `sarif_catagory` to allow for multiple sarif files to be uploaded for monorepos.
+* Added `sarif_category` to allow for multiple sarif files to be uploaded for monorepos.
 
 
 ## [2.0.6] - May 16th, 2024

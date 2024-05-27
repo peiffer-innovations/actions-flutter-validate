@@ -18,7 +18,7 @@ inputs:
     description: '(Optional) Package directory (default: ".")'
     required: false
     default: '.'
-  sarif_catagory:
+  sarif_category:
     description: '(Optional) Name of the security category.'
     required: false
     default: 'security-results'
@@ -96,5 +96,5 @@ runs:
       if: "${{ !cancelled() }}"
       uses: github/codeql-action/upload-sarif@d39d31e687223d841ef683f52467bd88e9b21c14 # v3.25.3
       with:
-        category: ${{ sarif_catagory }}
+        category: ${{ inputs.sarif_category }}
         sarif_file: ${{ inputs.path }}/${{ inputs.sarif_file }}

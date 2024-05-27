@@ -21,7 +21,7 @@ Name              | Default            | Description
 `flutter_version` | `any`              | Flutter version within the channel to use
 `generate_code`   | `false`            | State whether or not to run the code generator before validating
 `path`            | `.`                | Path for the package being validated
-`sarif_catagory`  | `security-results` | Unique name of the sarif category for use in monorepos
+`sarif_category`  | `security-results` | Unique name of the sarif category for use in monorepos
 `sarif_file`      | `results.sarif`    | Name of the file emitted by the `osv-scanner` reporting engine
 
 
