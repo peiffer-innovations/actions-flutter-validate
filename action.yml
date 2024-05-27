@@ -51,6 +51,11 @@ runs:
           flutter packages get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
+            if test -d "example"; then
+              cd example
+              dart run build_runner build --delete-conflicting-outputs -v
+              cd ..
+            fi
           fi
           flutter analyze
           flutter test
@@ -58,6 +63,11 @@ runs:
           dart pub get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
+            if test -d "example"; then
+              cd example
+              dart run build_runner build --delete-conflicting-outputs -v
+              cd ..
+            fi
           fi
           dart analyze
           dart test

@@ -1,3 +1,8 @@
+## [2.0.10] - May 27th, 2024
+
+* Updated to codegen the example when codegen is true
+
+
 ## [2.0.9] - May 27th, 2024
 
 * Added `skip_sarif` option.
