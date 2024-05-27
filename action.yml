@@ -53,7 +53,9 @@ runs:
             dart run build_runner build --delete-conflicting-outputs -v
             if test -d "example"; then
               cd example
-              dart run build_runner build --delete-conflicting-outputs -v
+              if grep -q build_runner: "pubspec.yaml"; then 
+                dart run build_runner build --delete-conflicting-outputs -v
+              fi
               cd ..
             fi
           fi
@@ -65,7 +67,9 @@ runs:
             dart run build_runner build --delete-conflicting-outputs -v
             if test -d "example"; then
               cd example
-              dart run build_runner build --delete-conflicting-outputs -v
+              if grep -q build_runner: "pubspec.yaml"; then 
+                dart run build_runner build --delete-conflicting-outputs -v
+              fi
               cd ..
             fi
           fi

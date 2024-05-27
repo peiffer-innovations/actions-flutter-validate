@@ -1,3 +1,8 @@
+## [2.0.11] - May 27th, 2024
+
+* Added check for build runner before attempting codegen
+
+
 ## [2.0.10] - May 27th, 2024
 
 * Updated to codegen the example when codegen is true
