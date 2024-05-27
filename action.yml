@@ -26,6 +26,10 @@ inputs:
     description: '(Optional) Name of the security output file.'
     required: false
     default: 'results.sarif'
+  skip_sarif:
+    description: '(Optional) Set to true to skip uploading the sarif file.'
+    required: false
+    default: 'false'
 
 runs:
   using: 'composite'
@@ -86,14 +90,14 @@ runs:
           --fail-on-vuln=true
     - name: "Upload artifact"
       id: "upload_artifact"
-      if: ${{ !cancelled() }}
+      if: ${{ !cancelled() && inputs.skip_sarif != 'true' }}
       uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
       with:
         name: SARIF file
         path: ${{ inputs.path }}/${{ inputs.sarif_file }}
         retention-days: 5
     - name: "Upload to code-scanning"
-      if: "${{ !cancelled() }}"
+      if: ${{ !cancelled() && inputs.skip_sarif != 'true' }}
       uses: github/codeql-action/upload-sarif@d39d31e687223d841ef683f52467bd88e9b21c14 # v3.25.3
       with:
         category: ${{ inputs.sarif_category }}

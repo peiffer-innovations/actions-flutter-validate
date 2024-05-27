@@ -23,6 +23,7 @@ Name              | Default            | Description
 `path`            | `.`                | Path for the package being validated
 `sarif_category`  | `security-results` | Unique name of the sarif category for use in monorepos
 `sarif_file`      | `results.sarif`    | Name of the file emitted by the `osv-scanner` reporting engine
+`skip_sarif`      | `false`            | Set to `true` to skip uploading the sarif artifact
 
 
 ## Example usage

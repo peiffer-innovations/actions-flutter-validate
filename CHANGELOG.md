@@ -1,3 +1,8 @@
+## [2.0.9] - May 27th, 2024
+
+* Added `skip_sarif` option.
+
+
 ## [2.0.8] - May 27th, 2024
 
 * Fixed references to `sarif_category`.
