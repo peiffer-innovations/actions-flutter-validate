@@ -18,7 +18,7 @@ inputs:
     description: '(Optional) Package directory (default: ".")'
     required: false
     default: '.'
-  serif_file:
+  sarif_file:
     description: '(Optional) Name of the security output file.'
     required: false
     default: 'results.sarif'
@@ -54,6 +54,9 @@ runs:
           dart analyze
           dart test
         fi
+
+        dart pub global activate license_checker
+        lic_ck check-licenses -c pubspec.yaml -a
       working-directory: ${{ inputs.path }}
 
       # Docs: https://google.github.io/osv-scanner/github-action/
@@ -73,7 +76,7 @@ runs:
       uses: google/osv-scanner-action/osv-reporter-action@75532bf0bf75464b047d80414dbce04449498365 # v1.7.3
       with:
         scan-args: |-
-          --output=${{ inputs.path }}/${{ inputs.serif_file }}
+          --output=${{ inputs.path }}/${{ inputs.sarif_file }}
           --new=${{ inputs.path }}/results.json
           --gh-annotations=false
           --fail-on-vuln=true
@@ -83,10 +86,10 @@ runs:
       uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
       with:
         name: SARIF file
-        path: ${{ inputs.path }}/${{ inputs.serif_file }}
+        path: ${{ inputs.path }}/${{ inputs.sarif_file }}
         retention-days: 5
     - name: "Upload to code-scanning"
       if: "${{ !cancelled() }}"
       uses: github/codeql-action/upload-sarif@d39d31e687223d841ef683f52467bd88e9b21c14 # v3.25.3
       with:
-        sarif_file: ${{ inputs.path }}/${{ inputs.serif_file }}
+        sarif_file: ${{ inputs.path }}/${{ inputs.sarif_file }}

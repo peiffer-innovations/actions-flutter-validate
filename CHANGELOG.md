@@ -1,3 +1,8 @@
+## [2.0.6] - May 16th, 2024
+
+* Added license checker to ensure non-OSS licensed dependencies get included.
+
+
 ## [2.0.5] - May 16th, 2024
 
 * Fixed typo
@@ -5,7 +10,7 @@
 
 ## [2.0.4] - May 16th, 2024
 
-* Added input for serif file name.
+* Added input for sarif file name.
 
 
 ## [2.0.3] - May 16th, 2024

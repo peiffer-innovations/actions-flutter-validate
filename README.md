@@ -21,7 +21,7 @@ Name              | Default         | Description
 `flutter_version` | `any`           | Flutter version within the channel to use
 `generate_code`   | `false`         | State whether or not to run the code generator before validating
 `path`            | `.`             | Path for the package being validated
-`serif_file`      | `results.sarif` | Name of the file emitted by the `osv-scanner` reporting engine
+`sarif_file`      | `results.sarif` | Name of the file emitted by the `osv-scanner` reporting engine
 
 
 ## Example usage
@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Validate
         uses: peiffer-innovations/actions-flutter-validate@v2
 ```
