@@ -15,13 +15,14 @@ This will also run the [Google Open Source Vulnerability](https://google.github.
 
 ## Inputs
 
-Name              | Default         | Description
-------------------|-----------------|-------------
-`channel`         | `stable`        | Channel to pull for Dart / Flutter's SDK
-`flutter_version` | `any`           | Flutter version within the channel to use
-`generate_code`   | `false`         | State whether or not to run the code generator before validating
-`path`            | `.`             | Path for the package being validated
-`sarif_file`      | `results.sarif` | Name of the file emitted by the `osv-scanner` reporting engine
+Name              | Default            | Description
+------------------|--------------------|-------------
+`channel`         | `stable`           | Channel to pull for Dart / Flutter's SDK
+`flutter_version` | `any`              | Flutter version within the channel to use
+`generate_code`   | `false`            | State whether or not to run the code generator before validating
+`path`            | `.`                | Path for the package being validated
+`sarif_catagory`  | `security-results` | Unique name of the sarif category for use in monorepos
+`sarif_file`      | `results.sarif`    | Name of the file emitted by the `osv-scanner` reporting engine
 
 
 ## Example usage
