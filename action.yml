@@ -48,6 +48,7 @@ runs:
         dart format --set-exit-if-changed lib test
 
         if grep -q "flutter:": "pubspec.yaml"; then 
+          echo "Using Flutter"
           flutter packages get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
@@ -62,6 +63,7 @@ runs:
           flutter analyze
           flutter test
         else
+          echo "Using Dart"
           dart pub get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v

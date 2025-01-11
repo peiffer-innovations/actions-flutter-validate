@@ -1,3 +1,8 @@
+## [2.1.1] - January 11th, 2025
+
+* Trying to diagnose grep issue
+
+
 ## [2.1.0] - January 11th, 2025
 
 * Updated to use [license_checker2](https://pub.dev/packages/license_checker2) as opposed to [license_checker](https://pub.dev/packages/license_checker) to properly support the new dart workspace.
