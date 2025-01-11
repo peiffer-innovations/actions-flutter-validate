@@ -47,7 +47,7 @@ runs:
 
         dart format --set-exit-if-changed lib test
 
-        if grep -q flutter: "pubspec.yaml"; then 
+        if grep -q "flutter:": "pubspec.yaml"; then 
           flutter packages get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
@@ -83,7 +83,7 @@ runs:
 
       # Docs: https://google.github.io/osv-scanner/github-action/
       # Releases: https://github.com/google/osv-scanner-action/tags
-    - name: "Run scanner"
+    - name: 'Run scanner'
       uses: google/osv-scanner-action/osv-scanner-action@75532bf0bf75464b047d80414dbce04449498365 # v1.7.3
       with:
         scan-args: |-
@@ -94,7 +94,7 @@ runs:
           --lockfile ${{ inputs.path }}/pubspec.lock
           ${{inputs.path}}
       continue-on-error: true
-    - name: "Run osv-scanner-reporter"
+    - name: 'Run osv-scanner-reporter'
       uses: google/osv-scanner-action/osv-reporter-action@75532bf0bf75464b047d80414dbce04449498365 # v1.7.3
       with:
         scan-args: |-
@@ -102,15 +102,15 @@ runs:
           --new=${{ inputs.path }}/results.json
           --gh-annotations=false
           --fail-on-vuln=true
-    - name: "Upload artifact"
-      id: "upload_artifact"
+    - name: 'Upload artifact'
+      id: 'upload_artifact'
       if: ${{ !cancelled() && inputs.skip_sarif != 'true' }}
       uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
       with:
         name: SARIF file
         path: ${{ inputs.path }}/${{ inputs.sarif_file }}
         retention-days: 5
-    - name: "Upload to code-scanning"
+    - name: 'Upload to code-scanning'
       if: ${{ !cancelled() && inputs.skip_sarif != 'true' }}
       uses: github/codeql-action/upload-sarif@d39d31e687223d841ef683f52467bd88e9b21c14 # v3.25.3
       with:

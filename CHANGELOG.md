@@ -1,3 +1,8 @@
+## [2.0.12] - January 11th, 2025
+
+* Fixed check for flutter to not false flag `flutter_lints`.
+
+
 ## [2.0.11] - May 27th, 2024
 
 * Added check for build runner before attempting codegen
