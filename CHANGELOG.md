@@ -1,3 +1,8 @@
+## [2.1.0] - January 11th, 2025
+
+* Updated to use [license_checker2](https://pub.dev/packages/license_checker2) as opposed to [license_checker](https://pub.dev/packages/license_checker) to properly support the new dart workspace.
+
+
 ## [2.0.12] - January 11th, 2025
 
 * Fixed check for flutter to not false flag `flutter_lints`.
