@@ -1,3 +1,8 @@
+## [2.1.2] - January 11th, 2025
+
+* Reverting Flutter test
+
+
 ## [2.1.1] - January 11th, 2025
 
 * Trying to diagnose grep issue

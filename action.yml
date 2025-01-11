@@ -47,8 +47,7 @@ runs:
 
         dart format --set-exit-if-changed lib test
 
-        if grep -q "flutter:": "pubspec.yaml"; then 
-          echo "Using Flutter"
+        if grep -q flutter: "pubspec.yaml"; then 
           flutter packages get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
@@ -63,7 +62,6 @@ runs:
           flutter analyze
           flutter test
         else
-          echo "Using Dart"
           dart pub get
           if test "${{ inputs.generate_code }}" = "true"; then
             dart run build_runner build --delete-conflicting-outputs -v
@@ -79,7 +77,7 @@ runs:
           dart test
         fi
 
-        dart pub global activate license_checker2
+        dart pub global activate license_checker
         lic_ck check-licenses -c pubspec.yaml -a
       working-directory: ${{ inputs.path }}
 
