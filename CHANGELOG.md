@@ -1,3 +1,8 @@
+## [2.1.3] - January 12th, 2025
+
+* Fixing license checker
+
+
 ## [2.1.2] - January 11th, 2025
 
 * Reverting Flutter test

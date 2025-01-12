@@ -77,7 +77,7 @@ runs:
           dart test
         fi
 
-        dart pub global activate license_checker
+        dart pub global activate license_checker2
         lic_ck check-licenses -c pubspec.yaml -a
       working-directory: ${{ inputs.path }}
 
