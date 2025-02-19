@@ -1,3 +1,8 @@
+## [2.1.4] - February 18th, 2025
+
+* Attempting to fix format when working with generated code
+
+
 ## [2.1.3] - January 12th, 2025
 
 * Fixing license checker
