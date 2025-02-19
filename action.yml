@@ -57,7 +57,7 @@ runs:
               cd ..
             fi
           fi
-          dart format --set-exit-if-changed lib test
+          dart format lib test # --set-exit-if-changed
           flutter analyze
           flutter test
         else
@@ -72,7 +72,7 @@ runs:
               cd ..
             fi
           fi
-          dart format --set-exit-if-changed lib test
+          dart format lib test # --set-exit-if-changed
           dart analyze
           dart test
         fi

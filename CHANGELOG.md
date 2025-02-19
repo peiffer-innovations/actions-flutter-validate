@@ -1,3 +1,8 @@
+## [2.1.5] - February 18th, 2025
+
+* Disabling `dart format` until [this issue](https://github.com/dart-lang/sdk/issues/60163) is resolved.
+
+
 ## [2.1.4] - February 18th, 2025
 
 * Attempting to fix format when working with generated code
